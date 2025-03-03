@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router";
 import axios from "axios";
-import LoggedIn from "../../LoggedIn"
+import ToDoList from "./ToDoList"
 
 const ProtectedRoute = () => {
   let nav = useNavigate();
