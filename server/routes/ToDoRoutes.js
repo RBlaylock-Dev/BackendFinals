@@ -1,8 +1,16 @@
 const Controller = require("../controllers/ToDoController")
 const authCheck = require("../middleware/authCheck")
+const AuthController = require("../controllers/AuthController")
 
 
 module.exports = (app) => {
+
+    app.post("/register", AuthController.register)
+
+    app.post("/login", AuthController.login)
+
+    // route to check auth from the Protected Route in React
+    app.get("/authCheck", MiddleWare, AuthController.authCheck)
 
     app.get("/getTodos", authCheck, Controller.getToDos)
 
