@@ -10,7 +10,7 @@ module.exports = (app) => {
     app.post("/login", AuthController.login)
 
     // route to check auth from the Protected Route in React
-    app.get("/authCheck", MiddleWare, AuthController.authCheck)
+    app.get("/authCheck", authCheck, AuthController.authCheck)
 
     app.get("/getTodos", authCheck, Controller.getToDos)
 
