@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import './App.css';
 import axios from 'axios';
 
-function App() {
+function ToDoList() {
   const [data, setData] = useState([]);
   const [newTodo, setNewTodo] = useState(''); // state for new todo
   const [editingId, setEditingId] = useState(null); // state for the todo being edited

@@ -55,7 +55,7 @@ function App() {
       [e.target.id]: e.target.value
     }))
   }
-  const handleRegisterSubmit = (e) => {
+  const handleRegisterSubmit = () => {
     console.log("reg", register)
     axios({
       method: 'post',
@@ -74,7 +74,7 @@ function App() {
         <input id='username' onChange={(e) => handleLogin(e)} type='text' placeholder='Username' />
         <br />
         <br />
-        <input id="password" onChange={(e) => handleLogin(e)} type='text' placeholder='Password' />
+        <input id="password" onChange={(e) => handleLogin(e)} type='password' placeholder='Password' />
         <br />
         <br />
         <button onClick={() => handleLoginSubmit()}>Login</button>
@@ -89,7 +89,7 @@ function App() {
         <input id='username' onChange={(e) => handleRegister(e)} type='text' placeholder='Username' />
         <br />
         <br />
-        <input id='password' onChange={(e) => handleRegister(e)} type='text' placeholder='Password' />
+        <input id='password' onChange={(e) => handleRegister(e)} type='password' placeholder='Password' />
         <br />
         <br />
         <button onClick={() => handleRegisterSubmit()}>Register</button>

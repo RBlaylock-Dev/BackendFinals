@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Outlet, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import axios from "axios";
 import ToDoList from "./ToDoList"
 
@@ -22,7 +22,7 @@ const ProtectedRoute = () => {
       .catch((err) => {
         console.log("useAuth err", err);
       });
-  }, []);
+  }, [nav]);
 
   return (
     <>
