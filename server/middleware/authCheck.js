@@ -12,15 +12,13 @@ const authCheck = (req, res, next) => {
 
     const decoded = jwt.verify(split[1], process.env.SECRET_KEY);
     console.log("decoded", decoded);
-    if (!decoded.username) {
-      res.json({ msg: "bad token" });
-    } else {
+    // if (!decoded.username) {
+    //   res.json({ msg: "bad token" });
+    // } else {
         req.user = decoded
-      res.json({ msg: "valid token" });
+      // res.json({ msg: "valid token" });
+        next();
     }
-  }
-
-  next();
-};
+  };
 
 module.exports = authCheck;

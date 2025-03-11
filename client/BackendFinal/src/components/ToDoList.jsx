@@ -90,7 +90,7 @@ function ToDoList() {
       </div>
 
       {/* Display todos */}
-      {data &&
+      {data.length &&
         data.map((item) => (
           <div
             key={item._id}

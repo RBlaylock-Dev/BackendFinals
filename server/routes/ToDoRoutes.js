@@ -18,7 +18,7 @@ module.exports = (app) => {
 
     app.delete("/delete/:id", authCheck, Controller.delete)
 
-    app.get("/test", authCheck, Controller.test)
+    app.get("/test", Controller.test)
 
     app.put("/edit/:id", authCheck, Controller.update)
 

@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 
 module.exports = {
   register: (req, res) => {
-    console.log("Reg hit", req);
+    console.log("Reg hit", req.body);
 
     Auth.findOne({ username: req.body.username })
       .then((found) => {
@@ -69,5 +69,7 @@ module.exports = {
   
   authCheck: (req, res) => {
     console.log("AUTH CHECK", req.user)
+  //   if (req.user )
+  // }
   }
 }

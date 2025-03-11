@@ -23,9 +23,8 @@ createRoot(document.getElementById('root')).render(
 
         <Route path="/admin/" element={<ProtectedRoute />}>
         
-          <Route path="/gettodos" element={<ToDoList />} />
+          <Route path="gettodos" element={<ToDoList />} />
 
-          <Outlet />
 
         </Route>
 
