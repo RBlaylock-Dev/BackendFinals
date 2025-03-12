@@ -58,14 +58,12 @@ function ToDoList() {
     axios
       .put(`http://localhost:3000/update/${id}`, { todo: editingText }) // Send updated text to the backend
       .then((res) => {
-        console.log('Todo Updated:', res); // Refresh the list from the server after updating
-        axios
-          .get('http://localhost:3000/gettodos')
-          .then((res) => {
-            console.log('Updated List:', res.data);
-            setData(res.data); // Update the state with the refreshed list
-          })
-          .catch((err) => console.log('Fetch error after update:', err));
+        console.log('Todo Updated:', res);
+        setData((prevData) =>
+          prevData.map((item) =>
+            item._id === id ? { ...item, todo: editingText } : item
+          )
+        ); // Update the state with the edited todo
         setEditingId(null); // Exit edit mode
         setEditingText(''); // Clear edit text state
       })
@@ -90,7 +88,7 @@ function ToDoList() {
       </div>
 
       {/* Display todos */}
-      {data.length &&
+      {data.length > 0 ? (
         data.map((item) => (
           <div
             key={item._id}
@@ -124,7 +122,10 @@ function ToDoList() {
               </div>
             )}
           </div>
-        ))}
+        ))
+      ) : (
+        <p>No todos available</p>
+      )}
     </>
   );
 }

@@ -20,6 +20,6 @@ module.exports = (app) => {
 
     app.get("/test", Controller.test)
 
-    app.put("/edit/:id", authCheck, Controller.update)
+    app.put("/update/:id", authCheck, Controller.update)
 
 }

@@ -41,7 +41,10 @@ module.exports = {
             console.log("Updated", updated)
             res.json(updated)
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({ error: "An error occurred while updating the ToDo item" });
+        })
     },
 
     test: (req, res) => {
